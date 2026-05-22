@@ -219,4 +219,4 @@ def create_database():
     print("Đã khởi tạo thành công CSDL: hms_database.db bằng SQLAlchemy")
 
 if "_name_" == "_main_":
-    create_database()
+    create_database() 
