@@ -208,3 +208,15 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def init_db():
     Base.metadata.create_all(bind=engine)###
+    
+    DATABASE_URL = "sqlite:///hms_database.db"
+engine = create_engine(DATABASE_URL, echo=False)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+def create_database():
+    """Hàm tạo file hms_database.db và cấu trúc các bảng"""
+    Base.metadata.create_all(bind=engine)
+    print("Đã khởi tạo thành công CSDL: hms_database.db bằng SQLAlchemy")
+
+if "_name_" == "_main_":
+    create_database()
